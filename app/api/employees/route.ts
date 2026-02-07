@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
     
     // Generate unique profile URL
     const employeeName = employeeData.name.replace(/\s+/g, '-').toLowerCase();
-    const profileUrl = `http://localhost:3000/${employeeName}`;
+    const profileUrl = `${process.env.NEXT_PUBLIC_APP_URL}/${employeeName}`;
     
     console.log('Generated profileUrl:', profileUrl);
     

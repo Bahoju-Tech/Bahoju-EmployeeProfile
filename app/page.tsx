@@ -15,7 +15,7 @@ export default function Home() {
             <strong>Example URL:</strong>
           </p>
           <code className="text-xs bg-gray-200 px-2 py-1 rounded">
-            http://localhost:3000/john-doe
+            {process.env.NEXT_PUBLIC_APP_URL}/john-doe
           </code>
         </div>
         <p className="text-sm text-gray-500">

@@ -11,7 +11,7 @@ export async function GET(
     await mongoose.connect(process.env.MONGODB_URL!);
     
     const { employeeName } = await params;
-    const profileUrl = `http://localhost:3000/${employeeName}`;
+    const profileUrl = `${process.env.NEXT_PUBLIC_APP_URL}/${employeeName}`;
     
     console.log('Looking for employee with profileUrl:', profileUrl);
     
