@@ -53,12 +53,6 @@ export default function EmployeeProfilePage() {
           <div className="text-red-500 text-6xl mb-4">😞</div>
           <h1 className="text-2xl font-bold text-slate-900 mb-2">Profile Not Found</h1>
           <p className="text-slate-600 mb-6">{error}</p>
-          <a
-            href="/"
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
-          >
-            Create New Profile
-          </a>
         </div>
       </div>
     );
