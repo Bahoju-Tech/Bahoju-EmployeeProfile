@@ -5,6 +5,9 @@ import { useParams } from 'next/navigation';
 import EmployeeProfile from '@/component/EmployeeProfile';
 import { EmployeeData } from '@/component/EmployeeProfile';
 
+export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
+
 export default function EmployeeProfilePage() {
   const params = useParams();
   const [employee, setEmployee] = useState<EmployeeData | null>(null);

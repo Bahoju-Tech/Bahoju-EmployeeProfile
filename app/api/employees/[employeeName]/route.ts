@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import mongoose from 'mongoose';
 import Employee from '@/models/Employee';
 
+export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
+
 // GET employee by profile URL name or employee ID
 export async function GET(
   request: NextRequest,

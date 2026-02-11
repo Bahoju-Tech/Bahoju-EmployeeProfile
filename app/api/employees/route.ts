@@ -3,6 +3,9 @@ import mongoose from 'mongoose';
 import Employee from '@/models/Employee';
 import QRCode from 'qrcode';
 
+export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
+
 // GET all employees
 export async function GET() {
   try {
