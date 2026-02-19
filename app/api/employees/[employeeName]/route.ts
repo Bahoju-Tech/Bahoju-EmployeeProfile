@@ -29,7 +29,8 @@ export async function GET(
     }
     
     // Try to find by profile URL
-    const profileUrl = `${process.env.NEXT_PUBLIC_APP_URL}/${employeeName}`;
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+    const profileUrl = `${baseUrl}/${employeeName}`;
     console.log('Looking for employee with profileUrl:', profileUrl);
     
     const employee = await Employee.findOne({ profileUrl: profileUrl });
