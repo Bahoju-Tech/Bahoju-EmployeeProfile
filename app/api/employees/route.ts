@@ -6,11 +6,18 @@ import QRCode from 'qrcode';
 export const dynamic = 'force-dynamic';
 export const fetchCache = 'force-no-store';
 
+// MongoDB connection options
+const mongooseOptions = {
+  serverSelectionTimeoutMS: 10000, // 10 seconds timeout
+  socketTimeoutMS: 45000, // 45 seconds socket timeout
+  maxPoolSize: 10, // Connection pool size
+};
+
 // GET all employees
 export async function GET() {
   try {
     console.log('Connecting to MongoDB...');
-    await mongoose.connect(process.env.MONGODB_URL!);
+    await mongoose.connect(process.env.MONGODB_URL!, mongooseOptions);
     console.log('Connected to MongoDB, fetching employees...');
     
     const employees = await Employee.find().sort({ createdAt: -1 });
@@ -30,7 +37,7 @@ export async function GET() {
 export async function POST(request: NextRequest) {
   try {
     console.log('Connecting to MongoDB for POST...');
-    await mongoose.connect(process.env.MONGODB_URL!);
+    await mongoose.connect(process.env.MONGODB_URL!, mongooseOptions);
     console.log('Connected to MongoDB, creating employee...');
     
     const employeeData = await request.json();
