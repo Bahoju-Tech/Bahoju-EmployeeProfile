@@ -1,3 +1,10 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Employee Profile',
+  description: 'View employee profile information',
+};
+
 export default function EmployeeProfilePage() {
   return (
     <div>
